@@ -1,0 +1,12 @@
+﻿using AppSaresp_2024.Models;
+
+namespace AppSaresp_2024.Repository.Contract
+{
+    public interface IAlunoRepository
+    {
+        //CRUZEIRO
+        IEnumerable<Aluno> ObterTodosAlunos();
+
+        void Cadastrar(Aluno aluno);
+    }
+}
