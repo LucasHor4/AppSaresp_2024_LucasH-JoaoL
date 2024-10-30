@@ -6,7 +6,7 @@ namespace AppSaresp_2024.Models
     public class ProfessorAplicador
     {
         [Display(Name = "Código do Professor")]
-        public int IdProfessorAplicador { get; set; }
+        public int IdProfessor { get; set; }
 
         [Display(Name = "Nome Completo")]
         [Required(ErrorMessage = "O campo nome é obrigatório!")]
