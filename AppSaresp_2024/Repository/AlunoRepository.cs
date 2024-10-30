@@ -21,7 +21,7 @@ namespace AppSaresp_2024.Repository
                 conexao.Open();
 
                 MySqlCommand cmd = new MySqlCommand("insert into tbaluno(Nome, Email, Telefone, Serie, Turma, DataNasc) " +
-                                                    " values (@Nome, @Email, @Telefone, @Serie, @Turma, @DataNasc)", conexao);
+                                                    " values (@Nome, @Email, @Telefone, @Serie, @Turma, @DataNasc);", conexao);
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = aluno.Nome;
                 cmd.Parameters.Add("@Email", MySqlDbType.VarChar).Value = aluno.Email;
                 cmd.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = aluno.Telefone;
@@ -41,7 +41,7 @@ namespace AppSaresp_2024.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tbaluno", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from tbaluno;", conexao);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -57,7 +57,7 @@ namespace AppSaresp_2024.Repository
                             IdAluno = Convert.ToInt32(dr["IdAluno"]),
                             Nome = (string)dr["Nome"],
                             Email = (string)dr["Email"],
-                            Telefone = Convert.ToInt32(dr["Telefone"]),
+                            Telefone = Convert.ToInt64(dr["Telefone"]),
                             Serie = (string)dr["Serie"],
                             Turma = (string)dr["Turma"],
                             DataNasc = Convert.ToDateTime(dr["DataNasc"])

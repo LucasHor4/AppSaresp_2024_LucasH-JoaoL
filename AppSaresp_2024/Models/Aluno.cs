@@ -5,7 +5,7 @@ namespace AppSaresp_2024.Models
 {
     public class Aluno
     {
-        [Display(Name = "Código do Professor")]
+        [Display(Name = "Código do Aluno")]
         public int IdAluno { get; set; }
 
         [Display(Name = "Nome Completo")]
@@ -19,7 +19,6 @@ namespace AppSaresp_2024.Models
 
         [Display(Name = "Telefone")]
         [Required(ErrorMessage = "O campo Telefone é obrigatório!")]
-        [StringLength(12, ErrorMessage = "Insira apenas 12 digitos!")]
         public BigInteger Telefone { get; set; }
 
         [Display(Name = "Serie")]

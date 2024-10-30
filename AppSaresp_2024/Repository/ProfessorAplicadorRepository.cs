@@ -21,7 +21,7 @@ namespace AppSaresp_2024.Repository
                 conexao.Open();
 
                 MySqlCommand cmd = new MySqlCommand("insert into tbaluno(Nome, CPF, RG, Telefone, DataNasc) " +
-                                                    " values (@Nome, @CPF, @RG, @Telefone, @DataNasc)", conexao);
+                                                    " values (@Nome, @CPF, @RG, @Telefone, @DataNasc);", conexao);
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = professor.Nome;
                 cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = professor.CPF;
                 cmd.Parameters.Add("@RG", MySqlDbType.VarChar).Value = professor.RG;
@@ -40,7 +40,7 @@ namespace AppSaresp_2024.Repository
             using (var conexao = new MySqlConnection(_conexaoMySQL))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from tbprofessorAplicador", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from tbprofessorAplicador;", conexao);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -57,7 +57,7 @@ namespace AppSaresp_2024.Repository
                             Nome = (string)dr["Nome"],
                             CPF = Convert.ToInt32(dr["CPF"]),
                             RG = Convert.ToInt32(dr["RG"]),
-                            Telefone = Convert.ToInt32(dr["Telefone"]),
+                            Telefone = Convert.ToInt64(dr["Telefone"]),
                             DataNasc = Convert.ToDateTime(dr["DataNasc"])
                         });
                 }

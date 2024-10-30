@@ -24,7 +24,6 @@ namespace AppSaresp_2024.Models
 
         [Display(Name = "Telefone")]
         [Required(ErrorMessage = "O campo Telefone é obrigatório!")]
-        [StringLength(12, ErrorMessage = "Insira apenas 12 digitos!")]
         public BigInteger Telefone { get; set; }
 
         [Display(Name = "Email")]
