@@ -20,7 +20,7 @@ namespace AppSaresp_2024.Repository
             {
                 conexao.Open();
 
-                MySqlCommand cmd = new MySqlCommand("insert into tbaluno(Nome, CPF, RG, Telefone, DataNasc) " +
+                MySqlCommand cmd = new MySqlCommand("insert into tbprofessorAplicador(Nome, CPF, RG, Telefone, DataNasc) " +
                                                     " values (@Nome, @CPF, @RG, @Telefone, @DataNasc);", conexao);
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = professor.Nome;
                 cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = professor.CPF;
@@ -55,7 +55,7 @@ namespace AppSaresp_2024.Repository
                         {
                             IdProfessor = Convert.ToInt32(dr["IdProfessor"]),
                             Nome = (string)dr["Nome"],
-                            CPF = Convert.ToInt32(dr["CPF"]),
+                            CPF = Convert.ToInt64(dr["CPF"]),
                             RG = Convert.ToInt32(dr["RG"]),
                             Telefone = Convert.ToInt64(dr["Telefone"]),
                             DataNasc = Convert.ToDateTime(dr["DataNasc"])

@@ -14,12 +14,12 @@ namespace AppSaresp_2024.Models
 
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "O campo CPF é obrigatório!")]
-        [StringLength(11, ErrorMessage = "Insira apenas 10 digitos!")]
-        public int CPF { get; set; }
+        //[MaxLength(11, ErrorMessage = "Insira apenas 11 digitos!")]
+        public BigInteger CPF { get; set; }
 
         [Display(Name = "RG")]
         [Required(ErrorMessage = "O campo RG é obrigatório!")]
-        [StringLength(9, ErrorMessage = "Insira apenas 9 digitos!")]
+        //[MaxLength(9, ErrorMessage = "Insira apenas 9 digitos!")]
         public int RG { get; set; }
 
         [Display(Name = "Telefone")]
